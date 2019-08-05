@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Button.css';
+import './Button.scss';
 import PropTypes from 'prop-types';
 
 const propTypes = {
