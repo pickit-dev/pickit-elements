@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Button.scss';
 
 export const Button = (props) => {
-    const { variant, size, color, className, disabled, children, icon, iconPosition } = props;
+    const { variant, size, loading, color, className, disabled, children, icon, iconPosition, fullWidth } = props;
     let classString = 'Button';
 
     variant && variant.split(" ").forEach(val => {
@@ -27,6 +27,14 @@ export const Button = (props) => {
 
     if(icon){
         classString += ` Button--withIcon`
+    }
+
+    if(fullWidth){
+        classString += ` Button--fullWidth`
+    }
+
+    if(loading){
+        classString += ` Button--loading`
     }
 
     let elementProps = Object.assign({}, props);
