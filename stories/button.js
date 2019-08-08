@@ -25,15 +25,13 @@ story.add('with text', () => {
  return <>
     <div style={{ padding: 20 }}>
       <Button {...defaultKnobs}>{defaultLabel}</Button>
+      <Button {...defaultKnobs} color="primary" variant="outlined">{defaultLabel}</Button>
+    </div>
+    <div style={{ padding: 20 }}>
       <Button {...defaultKnobs} variant="contained">{defaultLabel}</Button>
       <Button {...defaultKnobs} color="primary" variant="contained">{defaultLabel}</Button>
     </div>
     <div style={{ padding: 20 }}>
-      <Button {...defaultKnobs} variant="outlined">{defaultLabel}</Button>
-      <Button {...defaultKnobs} color="primary" variant="outlined">{defaultLabel}</Button>
-    </div>
-    <div style={{ padding: 20 }}>
-      <Button {...defaultKnobs} color="primary" variant="contained">{defaultLabel}</Button>
       <Button {...defaultKnobs} variant="link">{defaultLabel}</Button>
       <Button {...defaultKnobs} color="primary" variant="link">{defaultLabel}</Button>
     </div>
