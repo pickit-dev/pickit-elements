@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './Button.scss';
 
 export const Button = (props) => {
-    const { variant, size, loading, color, className, disabled, children, icon, iconPosition, fullWidth } = props;
+    const { variant, size, loading, color, className, disabled, children, icon, iconPosition, fullWidth, background } = props;
     let classString = 'Button';
+    let style = {};
 
     variant && variant.split(" ").forEach(val => {
         classString += ` Button--variant--${val}`
@@ -37,16 +38,20 @@ export const Button = (props) => {
         classString += ` Button--loading`
     }
 
+    if(background){
+        style.background = background;
+    }
+
     let elementProps = Object.assign({}, props);
     delete elementProps.className;
     delete elementProps.active;
 
     return (
-        <button className={classString} {...elementProps}>
+        <button className={classString} style={style} {...elementProps}>
             <React.Fragment>
-                { !iconPosition || iconPosition === "left" ? icon : "" }
+                { !iconPosition || iconPosition === "left" ? <div className="Button__icon">{icon}</div> : "" }
                 { children }
-                { iconPosition === "right" ? icon : "" }
+                { iconPosition === "right" ? <div className="Button__icon">{icon}</div> : "" }
             </React.Fragment>
         </button>
     );
