@@ -53,7 +53,6 @@ export const Button = (props) => {
 }
 
 Button.propTypes = {
-
   /** A string containing the variation of the button. 
    * Multiple variants are allowed and should be separated by a space.
    * 
@@ -90,5 +89,4 @@ Button.propTypes = {
 
   /** The button will cover 100% of the width. */
   fullWidth: PropTypes.bool,
-
 };
