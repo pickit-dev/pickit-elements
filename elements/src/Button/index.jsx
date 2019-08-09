@@ -54,26 +54,38 @@ export const Button = (props) => {
 
 Button.propTypes = {
 
-  /** A string containing the variation of the button. Multiple variants are allowed and should be separated by a space. */
+  /** A string containing the variation of the button. 
+   * Multiple variants are allowed and should be separated by a space.
+   * 
+   * The available variants are "contained", "raised", "link" */
   variant: PropTypes.string,
 
-  /** The size of the button. Available sizes are: "small", "large". */
+  /** The size of the button. 
+   * 
+   * Available sizes are: "small", "large". */
   size: PropTypes.oneOf(['small', 'large']),
 
-  /** The button will be set to a loading state. Note: Will also disable the button when set to true.  */
+  /** The button will be set to a loading state. 
+   * 
+   * Note: Will also disable the button when set to true.  */
   loading: PropTypes.bool,
 
   /** Defined color classes for the button. Available colors are: "white", "primary". 
+   * 
    * Combination of colors separated by a space may be supported depending on the scheme. */
   color: PropTypes.string,
 
   /** The button will be set to disabled. */
   disabled: PropTypes.disabled,
 
-  /** Icon that should be passed into the button. Important to use this prop instead of passing it in as a children. */
+  /** Icon that should be passed into the button. 
+   * 
+   * Important to use this prop instead of passing it in as a children. */
   icon: PropTypes.element,
 
-  /** Defines where to position the icon. Currently supported is "left", "right". Default is left. */
+  /** Defines where to position the icon. 
+   * 
+   * Currently supported is "left", "right". Default is left. */
   iconPosition: PropTypes.oneOf(['left', 'right']),
 
   /** The button will cover 100% of the width. */
