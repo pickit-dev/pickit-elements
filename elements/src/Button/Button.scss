@@ -80,10 +80,10 @@ $buttonLargeHeight: 44px;
 	}
 
 	&:hover:before {
-		opacity: 0.1;
+		opacity: 0.05;
 	}
 	&:active:before {
-		opacity: 0.15;
+		opacity: 0.1;
 	}
 
 	&--fullWidth {
@@ -126,19 +126,22 @@ $buttonLargeHeight: 44px;
 	&--variant--contained {
 		background: #9F9F9F;
 		color: #FFF;
-		
-		&:before {
-			background: #FFF;
-		}
 	}
 
 	&--color--primary {
 		color: #ff0091;	
 		border-color: #ff0091;
 
-		&.Button--variant--contained {
+		&:not(.Button--color--white).Button--variant--contained {
 			background-color: #ff0091;
 			color: white;	
+					
+			&:hover:before {
+				opacity: 0.2;
+			}
+			&:active:before {
+				opacity: 0.35;
+			}
 			
 			&:before {
 				background: #FFF;
