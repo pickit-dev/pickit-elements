@@ -13,10 +13,10 @@ export const Button = (props) => {
         icon, 
         iconPosition, 
         fullWidth, 
-        background 
+        background
     } = props;
     let classString = 'Button';
-    let style = {};
+    let style = props.style || {};
 
     variant && variant.split(" ").forEach(val => {
         classString += ` Button--variant--${val}`
@@ -30,29 +30,12 @@ export const Button = (props) => {
         classString += ` Button--size--${val}`
     });
 
-    if(className){
-        classString += ` ${className}`
-    }
-
-    if(disabled){
-        classString += ` Button--disabled`;
-    }
-
-    if(icon){
-        classString += ` Button--withIcon`
-    }
-
-    if(fullWidth){
-        classString += ` Button--fullWidth`
-    }
-
-    if(loading){
-        classString += ` Button--loading`
-    }
-
-    if(background){
-        style.background = background;
-    }
+    className && (classString += ` ${className}`);
+    disabled && (classString += ` Button--disabled`);
+    icon && (classString += ` Button--withIcon`);
+    fullWidth && (classString += ` Button--fullWidth`);
+    loading && (classString += ` Button--loading`);
+    background && (style.background = background);
 
     let elementProps = Object.assign({}, props);
     delete elementProps.className;
