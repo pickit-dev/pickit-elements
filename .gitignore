@@ -62,4 +62,4 @@ typings/
 
 
 storybook-static
-build
+/elements/build/
