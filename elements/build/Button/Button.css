@@ -9,6 +9,7 @@
   text-align: center;
   border-radius: 5px;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   padding: 0;
   line-height: 1;
@@ -19,7 +20,8 @@
   outline: none;
   user-select: none;
   overflow: hidden;
-  padding: 8px 12px; }
+  padding: 8px 12px;
+  vertical-align: top; }
   .Button:before {
     left: 0;
     right: 0;
@@ -31,13 +33,14 @@
     pointer-events: none;
     background: #000;
     opacity: 0; }
-  .Button svg, .Button img {
+  .Button .Button__icon svg, .Button .Button__icon img {
     width: 100%;
     height: 100%;
     max-width: 20px;
     max-height: 20px;
-    margin-right: 6px;
-    margin-top: -1px; }
+    margin-right: 6px; }
+  .Button > svg, .Button > img {
+    height: 14px; }
   .Button--loading {
     opacity: 0.5;
     pointer-events: none; }
@@ -72,13 +75,19 @@
     font-size: 12px;
     min-height: 28px;
     padding: 6px 10px; }
-    .Button--size--small svg, .Button--size--small img {
+    .Button--size--small .Button__icon svg, .Button--size--small .Button__icon img {
       max-width: 16px;
       max-height: 16px; }
+    .Button--size--small > svg, .Button--size--small > img {
+      height: 12px; }
   .Button--size--large {
     font-size: 16px;
     min-height: 44px;
     padding: 8px 20px; }
+    .Button--size--large > svg, .Button--size--large > img {
+      height: 18px; }
+  .Button--variant--raised {
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); }
   .Button--variant--link, .Button--variant--contained {
     border: 0 !important; }
   .Button--variant--contained {
@@ -94,6 +103,11 @@
       color: white; }
       .Button--color--primary.Button--variant--contained:before {
         background: #FFF; }
+  .Button--color--white.Button--variant--contained {
+    color: #515151;
+    background: #FFF; }
+    .Button--color--white.Button--variant--contained.Button--color--primary {
+      color: #ff0091; }
   .Button + .Button:not(.Button--fullWidth) {
     margin-left: 8px; }
   .Button:disabled {

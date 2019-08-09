@@ -23,8 +23,10 @@ var Button = function Button(props) {
       children = props.children,
       icon = props.icon,
       iconPosition = props.iconPosition,
-      fullWidth = props.fullWidth;
+      fullWidth = props.fullWidth,
+      background = props.background;
   var classString = 'Button';
+  var style = {};
   variant && variant.split(" ").forEach(function (val) {
     classString += " Button--variant--".concat(val);
   });
@@ -55,12 +57,21 @@ var Button = function Button(props) {
     classString += " Button--loading";
   }
 
+  if (background) {
+    style.background = background;
+  }
+
   var elementProps = Object.assign({}, props);
   delete elementProps.className;
   delete elementProps.active;
   return _react["default"].createElement("button", _extends({
-    className: classString
-  }, elementProps), _react["default"].createElement(_react["default"].Fragment, null, !iconPosition || iconPosition === "left" ? icon : "", children, iconPosition === "right" ? icon : ""));
+    className: classString,
+    style: style
+  }, elementProps), _react["default"].createElement(_react["default"].Fragment, null, !iconPosition && icon || iconPosition === "left" ? _react["default"].createElement("div", {
+    className: "Button__icon"
+  }, icon) : "", children, iconPosition === "right" ? _react["default"].createElement("div", {
+    className: "Button__icon"
+  }, icon) : ""));
 };
 
 exports.Button = Button;

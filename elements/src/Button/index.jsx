@@ -49,7 +49,7 @@ export const Button = (props) => {
     return (
         <button className={classString} style={style} {...elementProps}>
             <React.Fragment>
-                { !iconPosition || iconPosition === "left" ? <div className="Button__icon">{icon}</div> : "" }
+                { (!iconPosition && icon) || iconPosition === "left" ? <div className="Button__icon">{icon}</div> : "" }
                 { children }
                 { iconPosition === "right" ? <div className="Button__icon">{icon}</div> : "" }
             </React.Fragment>
