@@ -2,7 +2,19 @@ import React, { Component } from 'react';
 import './Button.scss';
 
 export const Button = (props) => {
-    const { variant, size, loading, color, className, disabled, children, icon, iconPosition, fullWidth, background } = props;
+    const { 
+        variant, 
+        size, 
+        loading, 
+        color, 
+        className, 
+        disabled, 
+        children, 
+        icon, 
+        iconPosition, 
+        fullWidth, 
+        background 
+    } = props;
     let classString = 'Button';
     let style = {};
 
