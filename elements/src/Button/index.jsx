@@ -20,15 +20,15 @@ export const Button = (props) => {
   let style = props.style || {};
 
   variant && variant.split(" ").forEach(val => {
-      classString += ` Button--variant--${val}`
+    classString += ` Button--variant--${val}`
   });
 
   color && color.split(" ").forEach(val => {
-      classString += ` Button--color--${val}`
+    classString += ` Button--color--${val}`
   });
 
   size && size.split(" ").forEach(val => {
-      classString += ` Button--size--${val}`
+    classString += ` Button--size--${val}`
   });
 
   className && (classString += ` ${className}`);
@@ -40,6 +40,7 @@ export const Button = (props) => {
   let elementProps = Object.assign({}, props);
   delete elementProps.className;
   delete elementProps.active;
+  delete elementProps.fullWidth;
 
   return (
     <button className={classString} style={style} {...elementProps}>

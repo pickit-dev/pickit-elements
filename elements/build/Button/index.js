@@ -5,11 +5,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Button = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 require("./Button.css");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -26,7 +28,7 @@ var Button = function Button(props) {
       fullWidth = props.fullWidth,
       background = props.background;
   var classString = 'Button';
-  var style = {};
+  var style = props.style || {};
   variant && variant.split(" ").forEach(function (val) {
     classString += " Button--variant--".concat(val);
   });
@@ -36,34 +38,15 @@ var Button = function Button(props) {
   size && size.split(" ").forEach(function (val) {
     classString += " Button--size--".concat(val);
   });
-
-  if (className) {
-    classString += " ".concat(className);
-  }
-
-  if (disabled) {
-    classString += " Button--disabled";
-  }
-
-  if (icon) {
-    classString += " Button--withIcon";
-  }
-
-  if (fullWidth) {
-    classString += " Button--fullWidth";
-  }
-
-  if (loading) {
-    classString += " Button--loading";
-  }
-
-  if (background) {
-    style.background = background;
-  }
-
+  className && (classString += " ".concat(className));
+  disabled && (classString += " Button--disabled");
+  icon && (classString += " Button--withIcon");
+  fullWidth && (classString += " Button--fullWidth");
+  loading && (classString += " Button--loading");
   var elementProps = Object.assign({}, props);
   delete elementProps.className;
   delete elementProps.active;
+  delete elementProps.fullWidth;
   return _react["default"].createElement("button", _extends({
     className: classString,
     style: style
@@ -75,3 +58,41 @@ var Button = function Button(props) {
 };
 
 exports.Button = Button;
+Button.propTypes = {
+  /** A string containing the variation of the button. 
+   * Multiple variants are allowed and should be separated by a space.
+   * 
+   * The available variants are "contained", "raised", "link" */
+  variant: _propTypes["default"].string,
+
+  /** The size of the button. 
+   * 
+   * Available sizes are: "small", "large". */
+  size: _propTypes["default"].oneOf(['small', 'large']),
+
+  /** The button will be set to a loading state. 
+   * 
+   * Note: Will also disable the button when set to true.  */
+  loading: _propTypes["default"].bool,
+
+  /** Defined color classes for the button. Available colors are: "white", "primary". 
+   * 
+   * Combination of colors separated by a space may be supported depending on the scheme. */
+  color: _propTypes["default"].string,
+
+  /** The button will be set to disabled. */
+  disabled: _propTypes["default"].disabled,
+
+  /** Icon that should be passed into the button. 
+   * 
+   * Important to use this prop instead of passing it in as a children. */
+  icon: _propTypes["default"].element,
+
+  /** Defines where to position the icon. 
+   * 
+   * Currently supported is "left", "right". Default is left. */
+  iconPosition: _propTypes["default"].oneOf(['left', 'right']),
+
+  /** The button will cover 100% of the width. */
+  fullWidth: _propTypes["default"].bool
+};
