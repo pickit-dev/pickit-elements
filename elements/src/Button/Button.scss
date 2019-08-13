@@ -160,6 +160,18 @@ $buttonLargeHeight: 44px;
 		}
 	}
 
+	&--color--invertHover {
+		&:hover {
+			color: #FFF;
+			background: #000;
+		}
+		&.Button--color--primary {
+			&:hover {
+				background: #ff0091;
+			}
+		}
+	}
+
 	+ .Button:not(.Button--fullWidth) {
 		margin-left: 8px;
 	}

@@ -24,8 +24,8 @@ story.add('with text', () => {
   const defaultLabel = text("Label", "Button text");
  return <>
     <div style={{ padding: 20 }}>
-      <Button {...defaultKnobs}>{defaultLabel}</Button>
-      <Button {...defaultKnobs} color="primary" variant="outlined">{defaultLabel}</Button>
+      <Button {...defaultKnobs} color="invertHover">{defaultLabel}</Button>
+      <Button {...defaultKnobs} color="primary invertHover">{defaultLabel}</Button>
     </div>
     <div style={{ padding: 20 }}>
       <Button {...defaultKnobs} variant="contained">{defaultLabel}</Button>

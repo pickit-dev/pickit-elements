@@ -109,6 +109,11 @@
     background: #FFF; }
     .Button--color--white.Button--variant--contained.Button--color--primary {
       color: #ff0091; }
+  .Button--color--invertHover:hover {
+    color: #FFF;
+    background: #000; }
+  .Button--color--invertHover.Button--color--primary:hover {
+    background: #ff0091; }
   .Button + .Button:not(.Button--fullWidth) {
     margin-left: 8px; }
   .Button:disabled {
