@@ -1,7 +1,7 @@
 $buttonHeight: 40px;
 $buttonSmallHeight: 28px;
 $buttonLargeHeight: 44px;
-$buttonTinyHeight: 20px;
+$buttonTinyHeight: 18px;
 
 .Button {
 	height: auto;
@@ -108,8 +108,8 @@ $buttonTinyHeight: 20px;
 	&--size--tiny {
 		font-size: 12px;
 		font-weight: 400;
-		min-height: $buttonSmallHeight;
-		padding: 6px 10px;
+		min-height: $buttonTinyHeight;
+		padding: 3px 6px;
 
 		.Button__icon svg, .Button__icon img {
 			max-width: 13px;
