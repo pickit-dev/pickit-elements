@@ -16,6 +16,7 @@ story.add('with text', () => {
     disabled: boolean("Disabled", false),
     size: radios("Size", { 
       None: "",
+      Tiny: "tiny",
       Small: "small",
       Large: "large",
       "Full width": "fullWidth"

@@ -1,6 +1,7 @@
 $buttonHeight: 40px;
 $buttonSmallHeight: 28px;
 $buttonLargeHeight: 44px;
+$buttonTinyHeight: 20px;
 
 .Button {
 	height: auto;
@@ -99,6 +100,21 @@ $buttonLargeHeight: 44px;
 		.Button__icon svg, .Button__icon img {
 			max-width: 16px;
 			max-height: 16px;
+		}
+		> svg, > img {
+			height: 12px;
+		}
+	}
+	&--size--tiny {
+		font-size: 12px;
+		font-weight: 400;
+		min-height: $buttonSmallHeight;
+		padding: 6px 10px;
+
+		.Button__icon svg, .Button__icon img {
+			max-width: 13px;
+			max-height: 13px;
+			margin-top: 2px;
 		}
 		> svg, > img {
 			height: 12px;
