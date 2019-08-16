@@ -82,8 +82,8 @@
   .Button--size--tiny {
     font-size: 12px;
     font-weight: 400;
-    min-height: 28px;
-    padding: 6px 10px; }
+    min-height: 18px;
+    padding: 3px 6px; }
     .Button--size--tiny .Button__icon svg, .Button--size--tiny .Button__icon img {
       max-width: 13px;
       max-height: 13px;
