@@ -76,7 +76,7 @@ Button.propTypes = {
   color: PropTypes.string,
 
   /** The button will be set to disabled. */
-  disabled: PropTypes.disabled,
+  disabled: PropTypes.bool,
 
   /** Icon that should be passed into the button. 
    * 

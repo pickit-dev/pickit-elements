@@ -43,6 +43,8 @@
   .Button--loading {
     opacity: 0.5;
     pointer-events: none; }
+    .Button--loading.Button--variant--contained.Button--color--primary {
+      opacity: 1; }
     .Button--loading:after {
       width: 100%;
       height: 100%;
