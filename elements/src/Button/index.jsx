@@ -63,7 +63,7 @@ Button.propTypes = {
   /** The size of the button. 
    * 
    * Available sizes are: "small", "large". */
-  size: PropTypes.oneOf(['small', 'large']),
+  size: PropTypes.oneOf(['small', 'tiny', 'large']),
 
   /** The button will be set to a loading state. 
    * 

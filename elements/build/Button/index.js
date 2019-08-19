@@ -68,7 +68,7 @@ Button.propTypes = {
   /** The size of the button. 
    * 
    * Available sizes are: "small", "large". */
-  size: _propTypes["default"].oneOf(['small', 'large']),
+  size: _propTypes["default"].oneOf(['small', 'tiny', 'large']),
 
   /** The button will be set to a loading state. 
    * 
@@ -81,7 +81,7 @@ Button.propTypes = {
   color: _propTypes["default"].string,
 
   /** The button will be set to disabled. */
-  disabled: _propTypes["default"].disabled,
+  disabled: _propTypes["default"].bool,
 
   /** Icon that should be passed into the button. 
    * 
